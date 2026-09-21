@@ -53,3 +53,7 @@ jspm_packages/
 
 # Aider AI Chat
 .aider*
+
+# Wiki doc screenshots: taken fresh from a live site (and show real desk/
+# workspace content), so they're pulled manually rather than committed.
+gnu_terry_pratchett/wiki_docs/screenshots/*.png

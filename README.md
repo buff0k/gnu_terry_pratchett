@@ -28,6 +28,23 @@ Only the **System Manager** and **Website Manager** roles can view or edit these
 injection logic itself is not permission-gated — it runs on every request, for every visitor (logged in
 or not), whenever the settings are enabled, since it's a response header rather than a document operation.
 
+#### Wiki documentation
+
+A longer walkthrough with screenshots lives in the "GNU Terry Pratchett" Frappe Wiki space (route `/clacks`
+on a site with the `wiki` app installed). The source for that page — markdown content, screenshots, and the
+importer that (re)builds it — lives in [`gnu_terry_pratchett/wiki_docs/`](gnu_terry_pratchett/wiki_docs/).
+
+To rebuild it on another bench (the `wiki` app must already be installed there):
+
+1. Copy `gnu_terry_pratchett/wiki_docs/screenshots/*.png` from this repo onto the target bench (they aren't
+   committed, since they're taken fresh from a live site rather than tracked as source).
+2. Run:
+   ```bash
+   bench --site $NAME_OF_SITE execute gnu_terry_pratchett.wiki_docs.import_wiki_posts.run
+   ```
+   This is safe to re-run — it finds-or-creates the space/page by a fixed route and always overwrites the
+   content and images with what's on disk, so re-running is how you refresh the page after an edit.
+
 ### Installation
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
