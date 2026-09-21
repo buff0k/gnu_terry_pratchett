@@ -7,9 +7,10 @@ description = "An implementation of the GNU- Tery Pratchett Project for Frappe, 
 requires-python = ">=3.14"
 readme = "README.md"
 dynamic = ["version"]
-dependencies = [
-    # "frappe~=16.0.0" # Installed and managed by bench.
-]
+dependencies = []
+
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0-dev,<17.0.0"
 
 [build-system]
 requires = ["flit_core >=3.4,<4"]
@@ -63,3 +64,7 @@ typing-modules = ["frappe.types.DF"]
 quote-style = "double"
 indent-style = "tab"
 docstring-code-format = true
+
+[project.urls]
+Repository = "https://github.com/buff0k/gnu_terry_pratchett.git"
+"Bug Reports" = "https://github.com/buff0k/gnu_terry_pratchett/issues"
