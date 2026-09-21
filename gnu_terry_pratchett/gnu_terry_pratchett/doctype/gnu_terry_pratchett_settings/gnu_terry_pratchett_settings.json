@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "creation": "2026-09-21 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "help_html",
+  "enabled",
+  "column_break_1",
+  "scope",
+  "section_break_names",
+  "overhead_names"
+ ],
+ "fields": [
+  {
+   "fieldname": "help_html",
+   "fieldtype": "HTML",
+   "options": "<p>This settings page has no desktop icon or Workspace entry by design. To find it again, use the <strong>Awesome Bar</strong> (the search box at the top of Desk) and search for <strong>GNU Terry Pratchett Settings</strong>.</p>"
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled",
+   "default": "1",
+   "description": "Master switch. When off, the X-Clacks-Overhead header is never added, regardless of the scope below."
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scope",
+   "fieldtype": "Select",
+   "label": "Apply To",
+   "options": "Both\nWebsite Pages Only\nDesk Pages Only",
+   "default": "Both",
+   "depends_on": "eval:doc.enabled",
+   "description": "Website pages are anything served outside /desk (web pages, portal, print, web forms). Desk pages are the /desk app shell."
+  },
+  {
+   "fieldname": "section_break_names",
+   "fieldtype": "Section Break",
+   "label": "Header Names"
+  },
+  {
+   "fieldname": "overhead_names",
+   "fieldtype": "Table",
+   "label": "Overhead Names",
+   "options": "Clacks Overhead Name",
+   "description": "Each row becomes one name in the X-Clacks-Overhead header, joined with commas. \"GNU Terry Pratchett\" ships as the first row; add more names to keep them going. See gnuterrypratchett.com."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-09-21 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Gnu Terry Pratchett",
+ "name": "GNU Terry Pratchett Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

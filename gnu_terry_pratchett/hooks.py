@@ -86,7 +86,7 @@ app_license = "gpl-2.0"
 # ------------
 
 # before_install = "gnu_terry_pratchett.install.before_install"
-# after_install = "gnu_terry_pratchett.install.after_install"
+after_install = "gnu_terry_pratchett.install.after_install"
 
 # Uninstallation
 # ------------
@@ -212,7 +212,7 @@ app_license = "gpl-2.0"
 # Request Events
 # ----------------
 # before_request = ["gnu_terry_pratchett.utils.before_request"]
-# after_request = ["gnu_terry_pratchett.utils.after_request"]
+after_request = ["gnu_terry_pratchett.clacks.inject_clacks_overhead_header"]
 
 # Job Events
 # ----------
